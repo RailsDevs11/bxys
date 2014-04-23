@@ -1,11 +1,11 @@
 ActiveAdmin.register Quize do
   
   scope :all, :default => true
-  #scope :publish
-  #scope :unpublish
+  scope :publish
+  scope :unpublish
   
   permit_params :question, :first_answer, :second_answer, :start_vote, 
-    :first_ans_image, :second_ans_image
+    :first_ans_image, :second_ans_image, :is_publish
   
   index do |d|         
     column :id
@@ -29,6 +29,7 @@ ActiveAdmin.register Quize do
       f.input :start_vote
       f.input :first_ans_image, :as => :file, :hint => f.template.image_tag(f.object.first_ans_image.url(:thumb))
       f.input :second_ans_image, :as => :file, :hint => f.template.image_tag(f.object.second_ans_image.url(:thumb))
+      f.input :is_publish, :label => 'Publish'
     end                              
     f.actions                        
   end  

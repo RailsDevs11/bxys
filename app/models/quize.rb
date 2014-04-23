@@ -7,5 +7,8 @@ class Quize < ActiveRecord::Base
 
   has_attached_file :second_ans_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment :second_ans_image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
-
+  
+  scope :publish, -> { where(is_publish: true ) }
+  scope :unpublish, -> { where(is_publish: false ) }
+  
 end

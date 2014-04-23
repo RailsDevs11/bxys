@@ -1,108 +1,64 @@
 
-  <header>
-      <%= image_tag("logo.png", :class => "logo") %>
-    </header>
-    
-    <hr />
-    
-    <div class="container main-container">
-    <!--top row start-->
-      <div class="row top-row">
-          <div class="social-media">
-              <a href="#">
-                  <%= image_tag("facebook_icon.png")%>
-                </a>
-                <a href="#">
-                  <%= image_tag("twitter.png")%>
-                </a>
-            </div>
-          <p>
-              En başarlı müzik grubu hangisi?
-                <span>(382 kez oylandı.)</span>
-            </p>
-            <ul>
-              <li>
-                  Grup Hepsi
-                    <span>1.587</span>
-                </li>
-                <li>
-                  Sepultura
-                    <span>81</span>
-                </li>
-            </ul>
-        </div>
-        <!--top row end-->
-        
-        <!--middle row start-->
-        <div class="row middle-row">
-          <div class="social-media social-media-second">
-              <a href="#">
-                  <%= image_tag("facebook_icon.png")%>
-                </a>
-                <a href="#">
-                  <%= image_tag("twitter.png")%>
-                </a>
-            </div>
-          <p>
-              <strong>En iyi telefon hangisi?</strong>  
-                <span>(2.133 <small>kez oylandı.</small>)</span>
-            </p>
-            <div class="col-md-12 padding-none">
-              <ul id="myTab" class="product-selection">
-                  <div class="or-div"></div>
-                  <li class="active">
-                    <a data-toggle="tab" href="#home">
-                      <div class="choose-option"></div>
-                        <p>iPhone 5S</p>
-                        <%= image_tag("product2.png")%>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-toggle="tab" href="#profile">
-                      <div class="choose-option"></div>
-                        <p>Samsung Galaxy S5</p>
-                        <%= image_tag("product1.png")%>
-                    </a>
-                  </li>
-                </ul>
-            </div>
-        </div>
-        <!--middle row end-->
-        
-        <!--bottom row start-->
-        <div class="row middle-row bottom-row">
-          <p>
-              Hangi spor dalı?
-                <span><small>(430 kez oylandı.)</small></span>
-            </p>
-            <div class="col-md-12 padding-none">
-              <ul id="myTab" class="product-selection disable">
-                  <div class="or-div"></div>
-                  <li>
-                    <a data-toggle="tab" href="#home">
-                      <div class="choose-option"></div>
-                        <p>Futbol</p>
-                        <%= image_tag("product3.png")%>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-toggle="tab" href="#profile">
-                      <div class="choose-option"></div>
-                        <p>Basketbol</p>
-                        <%= image_tag("product4.png")%>
-                    </a>
-                  </li>
-                </ul>
-            </div>
-        </div>
-        <!--bottom row end-->
-        
-        
-        
-    </div>
-    
-    <footer>
-      <a href="#">Bize ulaşın</a>
-    </footer>
+<!--top row start-->
+<div class="row top-row">
+  <div class="social-media">
+    <a href="#"><%= image_tag("facebook_icon.png")%></a>
+    <a href="#"><%= image_tag("twitter.png")%></a>
+  </div>
+  <p>
+    En başarlı müzik grubu hangisi?
+    <span>(382 kez oylandı.)</span>
+  </p>
+  <ul>
+    <li>
+      Grup Hepsi
+      <span>1.587</span>
+    </li>
+    <li>
+      Sepultura
+      <span>81</span>
+    </li>
+  </ul>
+</div>
+  <!--top row end-->
+  
+<!--middle row start-->
+<div class="row middle-row">
+  <%= render partial: "quize" %>
+</div>
+<!--middle row end-->
+
+<!--bottom row start-->
+<div class="row middle-row bottom-row">
+  <div class="social-media social-media-second">
+    <a href="#"><%= image_tag("facebook_icon.png")%></a>
+    <a href="#"><%= image_tag("twitter.png")%></a>
+  </div>
+  <p>
+    Hangi spor dalı?
+    <span><small>(430 kez oylandı.)</small></span>
+  </p>
+  <div class="col-md-12 padding-none">
+    <ul id="myTab" class="product-selection disable">
+      <div class="or-div"></div>
+      <li>
+        <a data-toggle="tab" href="#home">
+          <div class="choose-option"></div>
+            <p>Futbol</p>
+            <%= image_tag("product3.png")%>
+        </a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#profile">
+          <div class="choose-option"></div>
+            <p>Basketbol</p>
+            <%= image_tag("product4.png")%>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+  <!--bottom row end-->
+
 
 

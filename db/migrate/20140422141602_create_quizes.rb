@@ -5,6 +5,7 @@ class CreateQuizes < ActiveRecord::Migration
       t.string :first_answer
       t.string :second_answer
       t.integer :start_vote
+      t.boolean :is_publish
       t.attachment :first_ans_image
       t.attachment :second_ans_image
       

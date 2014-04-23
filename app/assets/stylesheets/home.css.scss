@@ -1,0 +1,339 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+
+/* CSS Document */
+
+@font-face {
+  font-family: 'effraregular';
+  src: url('effra-webfont.eot');
+  src: url('effra-webfont.eot?#iefix') format("embedded-opentype"), url('effra-webfont.woff') format("woff"), url('effra-webfont.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+a:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'effraregular';
+  font-size: 14px;
+}
+
+hr {
+  margin: 1px 0 0;
+}
+
+.padding-none {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+header {
+  background: #000;
+  width: 100%;
+  min-height: 43px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+.main-container {
+  width: 660px !important;
+  min-height: 100px;
+}
+
+.top-row {
+  background: #f7f7f7;
+  border: 1px solid #d7d7d7;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  position: relative;
+  p {
+    text-align: center;
+    color: #000;
+    padding: 10px 0 0;
+    span {
+      color: #8b8b8b;
+      font-size: 12px;
+    }
+  }
+  ul {
+    padding: 0;
+    li {
+      background: #FFFFFF;
+      border-top: 1px solid #D7D7D7;
+      color: #8B8B8B;
+      float: left;
+      list-style: none outside none;
+      padding: 10px;
+      width: 50%;
+      &:first-child {
+        border-right: 1px solid #D7D7D7;
+        border-radius: 0 0 0 6px;
+      }
+      &:last-child {
+        border-radius: 0 0 6px 0;
+      }
+      span {
+        background: url(check_arrow.png) no-repeat 0 5px;
+        display: inline;
+        float: right;
+        padding-left: 25px;
+      }
+    }
+  }
+}
+
+.social-media {
+  border: 1px solid #D7D7D7;
+  border-radius: 0 6px 6px 0;
+  padding: 9px 0 9px 9px;
+  position: absolute;
+  right: -79px;
+  top: -2px;
+  a {
+    display: inline-block;
+    img {
+      width: 70%;
+    }
+  }
+}
+
+.middle-row {
+  margin-top: 30px;
+  position: relative;
+  p {
+    border-color: #D7D7D7;
+    border-radius: 6px 0 0 0;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    font-size: 20px;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    span {
+      font-size: 20px;
+      color: #f34836;
+      padding-left: 15px;
+      small {
+        font-size: 14px;
+        color: #8b8b8b;
+      }
+    }
+  }
+}
+
+.social-media-second {
+  padding: 13px 7px;
+  right: -94px;
+  top: 0;
+  a {
+    padding-right: 6px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.product-selection {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  li {
+    float: left;
+    list-style: none;
+    position: relative;
+    width: 50%;
+    height: 240px;
+    overflow: hidden;
+    a img {
+      height: 100%;
+      width: 100%;
+    }
+    &:last-child a .choose-option {
+      left: 0 !important;
+    }
+    &.active {
+      p {
+        background-color: #f34836;
+      }
+      a .choose-option {
+        background-position: 0 -110px !important;
+      }
+      img {
+        opacity: 0.5;
+      }
+      a {
+        color: #fff;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    p {
+      border: none;
+      font-size: 18px;
+      background-color: #e3e3e3;
+      border-radius: 0;
+      height: 42px;
+      line-height: 42px;
+      padding: 0;
+    }
+  }
+}
+
+.choose-option {
+  background: url(like_sprite.png) no-repeat;
+  display: block;
+  height: 93px;
+  position: absolute;
+  right: 0;
+  top: 48%;
+  width: 90px;
+  z-index: 999;
+}
+
+.or-div {
+  background: url(or.png) no-repeat;
+  height: 42px;
+  left: 45%;
+  position: absolute;
+  width: 50px;
+  display: block;
+  z-index: 999;
+}
+
+.bottom-row {
+  margin-top: 30px;
+  p, li p {
+    font-size: 14px;
+  }
+  p span small {
+    font-size: 12px;
+  }
+}
+
+.disable {
+  a {
+    cursor: default;
+    img {
+      opacity: 0.5;
+    }
+  }
+  li.active {
+    a {
+      .choose-option {
+        background-position: 0 0 !important;
+      }
+      color: #000;
+    }
+    p {
+      background-color: #e3e3e3;
+    }
+  }
+}
+
+footer {
+  background: #000;
+  width: 100%;
+  min-height: 43px;
+  border-top: 2px solid #D7D7D7;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  a {
+    background: url(footer_bullet.png) no-repeat 0 20px;
+    display: block;
+    float: right;
+    font-size: 12px;
+    padding-left: 14px;
+    padding-right: 20%;
+    padding-top: 15px;
+    text-decoration: none;
+    color: #fff;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 700px) {
+  .main-container {
+    width: 84% !important;
+  }
+  .top-row {
+    font-size: 12px;
+    p span {
+      display: block;
+    }
+    ul li {
+      padding: 10px 5px;
+      span {
+        background-size: auto 34%;
+        padding-left: 15px;
+      }
+    }
+  }
+  .social-media {
+    padding: 9px 5px 9px 4px;
+    right: -25px;
+    top: -1px;
+    a {
+      display: block;
+      margin-bottom: 4px;
+      width: 14px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .product-selection li p {
+    font-size: 12px;
+  }
+  .middle-row p {
+    font-size: 14px;
+    span {
+      font-size: 14px;
+      display: block;
+    }
+  }
+  .social-media-second {
+    top: 0 !important;
+    padding: 17px 2px !important;
+    a {
+      padding-right: 6px;
+      width: 20px !important;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 700px) and (orientation: portrait) {
+  .or-div {
+    background-size: 70% 70%;
+    left: 41%;
+  }
+  .product-selection li p {
+    height: 29px;
+    line-height: 29px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .main-container {
+    width: 75% !important;
+  }
+}

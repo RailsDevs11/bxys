@@ -1,4 +1,5 @@
 
+
 <!--top row start-->
 <div class="row top-row">
   <div class="social-media">
@@ -20,7 +21,7 @@
     </li>
   </ul>
 </div>
-  <!--top row end-->
+<!--top row end-->
   
 <!--middle row start-->
 <div class="row middle-row">
@@ -58,7 +59,18 @@
     </ul>
   </div>
 </div>
-  <!--bottom row end-->
+<!--bottom row end-->
 
-
-
+<script>
+$(document).ready(function(){
+  $(".qanswer_click").click(function() {
+    var id ="3"
+    $.ajax({
+      type: 'POST',
+      url: "/score_up",
+      data:{ans_id: id}
+    });
+    return false;
+  });
+});
+</script>

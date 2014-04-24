@@ -41,4 +41,8 @@ gem 'debugger', group: [:development]
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'bootstrap-sass', '~> 3.0.2.0'
-gem 'pg', group: [:production]
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+

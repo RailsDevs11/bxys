@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: 'Effra';
-  src: url('effra.eot');
-  src: url('effra.eot?#iefix') format("embedded-opentype"), url('effra.woff') format("woff"), url('effra.ttf') format("truetype");
+  src: image-url('effra.eot');
+  src: image-url('effra.eot?#iefix') format("embedded-opentype"), image-url('effra.woff') format("woff"), image-url('effra.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }

@@ -7,9 +7,9 @@
 /* CSS Document */
 
 @font-face {
-  font-family: 'effraregular';
-  src: url('effra-webfont.eot');
-  src: url('effra-webfont.eot?#iefix') format("embedded-opentype"), url('effra-webfont.woff') format("woff"), url('effra-webfont.ttf') format("truetype");
+  font-family: 'Effra';
+  src: url('effra.eot');
+  src: url('effra.eot?#iefix') format("embedded-opentype"), url('effra.woff') format("woff"), url('effra.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -22,7 +22,7 @@ a:focus {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'effraregular';
+  font-family: 'Effra';
   font-size: 14px;
 }
 
@@ -36,7 +36,7 @@ hr {
 }
 
 header {
-  background: #000;
+  background: #4a4a4a;
   width: 100%;
   min-height: 43px;
 }
@@ -54,10 +54,12 @@ header {
 
 .top-row {
   background: #f7f7f7;
-  border: 1px solid #d7d7d7;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   position: relative;
+  border-color: #D7D7D7;
+  border-style: solid;
+  border-width: 1px;
   p {
     text-align: center;
     color: #000;
@@ -97,14 +99,17 @@ header {
 .social-media {
   border: 1px solid #D7D7D7;
   border-radius: 0 6px 6px 0;
-  padding: 9px 0 9px 9px;
+  padding: 8px 0 9px 9px;
   position: absolute;
-  right: -79px;
-  top: -2px;
+  right: -78px;
+  top: -1px;
+  width: 78px;
   a {
     display: inline-block;
+    width: 35%;
+    margin-right: 8px;
     img {
-      width: 70%;
+      width: 100%;
     }
   }
 }
@@ -122,10 +127,11 @@ header {
     text-align: center;
     position: relative;
     margin: 0;
+    color: #000;
     span {
-      font-size: 20px;
+      font-size: 18px;
       color: #f34836;
-      padding-left: 15px;
+      padding-left: 5px;
       small {
         font-size: 14px;
         color: #8b8b8b;
@@ -135,11 +141,17 @@ header {
 }
 
 .social-media-second {
-  padding: 13px 7px;
-  right: -94px;
+  padding: 15px 0 15px 12px;
+  right: -93px;
   top: 0;
+  border: 1px solid #D7D7D7;
+  border-radius: 0 6px 6px 0;
+  position: absolute;
+  width: 94px;
   a {
-    padding-right: 6px;
+    padding-right: 8px;
+    display: inline-block;
+    width: 37px;
     img {
       width: 100%;
     }
@@ -165,19 +177,18 @@ header {
     &:last-child a .choose-option {
       left: 0 !important;
     }
-    &.active {
-      p {
-        background-color: #f34836;
-      }
-      a .choose-option {
-        background-position: 0 -110px !important;
-      }
-      img {
-        opacity: 0.5;
-      }
-      a {
-        color: #fff;
-      }
+    &.active p, &:hover p {
+      background-color: #f34836;
+      color: #fff;
+    }
+    &.active a .choose-option, &:hover a .choose-option {
+      background-position: 0 -110px !important;
+    }
+    &.active img, &:hover img {
+      opacity: 0.5;
+    }
+    &.active a {
+      color: #fff;
     }
     a {
       text-decoration: none;
@@ -209,7 +220,7 @@ header {
 .or-div {
   background: url(or.png) no-repeat;
   height: 42px;
-  left: 45%;
+  left: 46%;
   position: absolute;
   width: 50px;
   display: block;
@@ -230,32 +241,36 @@ header {
   a {
     cursor: default;
     img {
-      opacity: 0.5;
+      opacity: 0.3;
     }
   }
-  li.active {
-    a {
-      .choose-option {
-        background-position: 0 0 !important;
-      }
-      color: #000;
+  &:hover a img {
+    opacity: 0.3;
+  }
+  li.active a {
+    .choose-option {
+      background-position: 0 0 !important;
     }
-    p {
-      background-color: #e3e3e3;
-    }
+    color: #000;
+  }
+  &:hover li a {
+    color: #000;
+  }
+  li.active p, &:hover li p {
+    background-color: #e3e3e3;
+    color: #000;
   }
 }
 
 footer {
-  background: #000;
+  background: #4a4a4a;
   width: 100%;
   min-height: 43px;
   border-top: 2px solid #D7D7D7;
-  position: fixed;
+  /*  position:fixed;*/
   bottom: 0;
   z-index: 1000;
   a {
-    background: url(footer_bullet.png) no-repeat 0 20px;
     display: block;
     float: right;
     font-size: 12px;
@@ -264,6 +279,7 @@ footer {
     padding-top: 15px;
     text-decoration: none;
     color: #fff;
+    text-transform: lowercase;
     &:hover {
       color: #fff;
       text-decoration: none;
@@ -292,6 +308,7 @@ footer {
     padding: 9px 5px 9px 4px;
     right: -25px;
     top: -1px;
+    width: 25px;
     a {
       display: block;
       margin-bottom: 4px;
@@ -313,10 +330,13 @@ footer {
   }
   .social-media-second {
     top: 0 !important;
-    padding: 17px 2px !important;
+    padding: 10px 2px !important;
+    width: 25px;
+    right: -25px;
     a {
       padding-right: 6px;
-      width: 20px !important;
+      width: 25px !important;
+      margin: 3px 0;
     }
   }
 }
@@ -329,6 +349,26 @@ footer {
   .product-selection li p {
     height: 29px;
     line-height: 29px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 700px) and (orientation: landscape) {
+  .social-media {
+    right: -30px !important;
+    width: 30px !important;
+    a {
+      width: 15px !important;
+      margin-bottom: 3px !important;
+    }
+  }
+  .social-media-second {
+    right: -30px !important;
+    width: 30px !important;
+    padding: 5px 2px !important;
+    a {
+      width: 30px !important;
+      margin-bottom: 3px !important;
+    }
   }
 }
 

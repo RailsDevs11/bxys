@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
   post '/score_up' => 'home#score_up'
+  post '/vote_up' => 'home#vote_up'
+  
 end

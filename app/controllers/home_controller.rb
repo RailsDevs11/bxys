@@ -1,11 +1,17 @@
 class HomeController < ApplicationController
 
   def index
-    @quizes = Quize.publish.order("created_at DESC")
+    @quizes = Quize.all.order("created_at DESC")
   end
 
   def score_up
+    debugger
     render :text => 'thanks'
   end
     
+  def vote_up
+    @que = Quize.find_by_id(params[:que_id])
+    @que.update_votes
+  end
+  
 end

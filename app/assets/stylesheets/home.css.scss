@@ -87,7 +87,7 @@ header {
         border-radius: 0 0 6px 0;
       }
       span {
-        background: url(check_arrow.png) no-repeat 0 5px;
+        background: image-url("check_arrow.png") no-repeat 0 5px;
         display: inline;
         float: right;
         padding-left: 25px;
@@ -207,7 +207,7 @@ header {
 }
 
 .choose-option {
-  background: url(like_sprite.png) no-repeat;
+  background: image-url("like_sprite.png") no-repeat;
   display: block;
   height: 93px;
   position: absolute;
@@ -218,7 +218,7 @@ header {
 }
 
 .or-div {
-  background: url(or.png) no-repeat;
+  background: image-url("or.png") no-repeat;
   height: 42px;
   left: 46%;
   position: absolute;

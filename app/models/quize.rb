@@ -11,4 +11,12 @@ class Quize < ActiveRecord::Base
   scope :publish, -> { where(is_publish: true ) }
   scope :unpublish, -> { where(is_publish: false ) }
   
+  def first_aimage
+    self.first_ans_image && self.first_ans_image.present? ? self.first_ans_image.url(:thumb) : "/assets/noimage.jpg"
+  end
+
+  def second_aimage
+    self.second_ans_image && self.second_ans_image.present? ? self.second_ans_image.url(:thumb) : "/assets/noimage.jpg"
+  end
+
 end

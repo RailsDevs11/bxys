@@ -1,7 +1,3 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 @charset "utf-8";
 
 /* CSS Document */
@@ -36,7 +32,7 @@ hr {
 }
 
 header {
-  background: #4a4a4a;
+  background: #262626;
   width: 100%;
   min-height: 43px;
 }
@@ -135,6 +131,10 @@ header {
       small {
         font-size: 14px;
         color: #8b8b8b;
+      }
+      i {
+        color: #8b8b8b;
+        font-style: normal;
       }
     }
   }
@@ -237,33 +237,13 @@ header {
   }
 }
 
-.disable {
-  a {
-    cursor: default;
-    img {
-      opacity: 0.3;
-    }
-  }
-  &:hover a img {
-    opacity: 0.3;
-  }
-  li.active a {
-    .choose-option {
-      background-position: 0 0 !important;
-    }
-    color: #000;
-  }
-  &:hover li a {
-    color: #000;
-  }
-  li.active p, &:hover li p {
-    background-color: #e3e3e3;
-    color: #000;
-  }
+.inactive a img {
+  opacity: 0.3;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'gs\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#gs");
 }
 
 footer {
-  background: #4a4a4a;
+  background: #262626;
   width: 100%;
   min-height: 43px;
   border-top: 2px solid #D7D7D7;
@@ -285,6 +265,10 @@ footer {
       text-decoration: none;
     }
   }
+}
+
+.inactive {
+  pointer-events: none;
 }
 
 @media (min-width: 320px) and (max-width: 700px) {

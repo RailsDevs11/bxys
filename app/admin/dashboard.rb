@@ -11,13 +11,10 @@ ActiveAdmin.register_page "Dashboard" do
   end
 
   content :title => proc{ I18n.t("active_admin.dashboard") } do
-    section("Total vote number:") do
+    section("Total question number:") do
       h3 Quize.all.count
     end
     
-    section("Total question number:") do
-      h3 Quize.all.count
-    end 
   end
 
 

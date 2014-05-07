@@ -13,11 +13,11 @@ class Quize < ActiveRecord::Base
   after_create :store_vote
     
   def first_answer_image
-    self.first_ans_image.present? ? self.first_ans_image.url(:thumb) : "/assets/noimage.png"
+    self.first_ans_image.present? ? self.first_ans_image.url : "/assets/no_image.png "
   end
 
   def second_answer_image
-    self.second_ans_image.present? ? self.second_ans_image.url(:thumb) : "/assets/noimage.png"
+    self.second_ans_image.present? ? self.second_ans_image.url : "/assets/no_image.png"
   end
   
   def answer_first

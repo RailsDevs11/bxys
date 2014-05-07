@@ -5,7 +5,6 @@ class HomeController < ApplicationController
   end
 
   def score_up
-    debugger
     render :text => 'thanks'
   end
     

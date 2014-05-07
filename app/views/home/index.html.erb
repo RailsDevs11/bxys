@@ -12,7 +12,7 @@ $(function(){
      $(this).addClass("selected");
   $(".selected ul li img").fadeOut(1800);
   $(".right-icon").css("display", "block");
-     $(this).next('.main-container .row').removeClass("inactive") & $(".selected + .row").append('<div class="social-media-second"><a href="#"><img src="/assets/facebook_icon.png" /></a><a href="#"><img src="/assets/twitter.png" /></a></div>');
+     $(this).next('.main-container .row').removeClass("inactive") & $(".selected + .row").append('<div class="social-media-second"><a href="#"><%= image_tag("facebook_icon.png")%></a><a href="#"><%= image_tag("twitter.png")%></a></div>');
      $(this).prev().hide();
      $(".selected .social-media-second").addClass("social-media") & $(".selected .social-media-second").removeClass("social-media-second");
    });

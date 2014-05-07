@@ -1,88 +1,56 @@
-<!--top row start-->
-<div class="row top-row">
-  <div class="social-media">
-      <a href="#">
-          <%= image_tag("facebook_icon.png")%>
-        </a>
-        <a href="#">
-          <%= image_tag("twitter.png")%>
-        </a>
-    </div>
-  <p>
-      En basarlı müzik grubu hangisi?
-        <span>(382 kez oylandı.)</span>
-    </p>
-    <ul>
-      <li>
-          Grup Hepsi
-            <span>1.587</span>
-        </li>
-        <li>
-          Sepultura
-            <span>81</span>
-        </li>
-    </ul>
-</div>
-<!--top row end-->
-  
 <!--middle row start-->
-<div class="row middle-row">
-  <div class="social-media-second">
-      <a href="#">
-          <%= image_tag("facebook_icon.png")%>
-        </a>
-        <a href="#">
-          <%= image_tag("twitter.png")%>
-        </a>
-    </div>
-  <p>
-      <strong>En iyi telefon hangisi?</strong>  
-        <span><i>(</i>2.133 <small>kez oylandı.</small><i>)</i></span>
-    </p>
-    <div class="col-md-12 padding-none">
-      <ul id="myTab" class="product-selection">
-          <div class="or-div"></div>
-          <li>
-            <a data-toggle="tab" href="#home">
-              <div class="choose-option"></div>
-                <p>iPhone 5S</p>
-                <%= image_tag("product2.png")%>
-            </a>
-          </li>
-          <li>
-            <a data-toggle="tab" href="#profile">
-              <div class="choose-option"></div>
-                <p>Samsung Galaxy S5</p>
-                <%= image_tag("product1.png")%>
-            </a>
-          </li>
-        </ul>
-    </div>
-</div>
+<% @quizes.each do |q| %>
+  <div class="row middle-row <%= (q.id === @quizes.first.id) ? "" : "bottom-row inactive" %>">
+    <%= render partial: "quize", locals: { q: q } %>
+  </div>
+<% end %>
 <!--middle row end-->
+
+<script type="text/javascript">
+$(function(){
+   $(".row").click(function(){
+     $(this).addClass("selected");
+  $(".selected ul li img").fadeOut(1800);
+  $(".right-icon").css("display", "block");
+     $(this).next('.main-container .row').removeClass("inactive") & $(".selected + .row").append('<div class="social-media-second"><a href="#"><img src="/assets/facebook_icon.png" /></a><a href="#"><img src="/assets/twitter.png" /></a></div>');
+     $(this).prev().hide();
+     $(".selected .social-media-second").addClass("social-media") & $(".selected .social-media-second").removeClass("social-media-second");
+   });
+ });
+</script>
+    
+
+<script>
+$(document).ready(function(){
+  $(".first_answer_click").click(function() {
+    var id = this.id
+    $.ajax({
+      type: 'POST',
+      url: "/score_up",
+      data:{ans_id: id, type: "fans"}
+    });
+    return false;
+  });
   
-<!--bottom row start-->
-<div class="row middle-row bottom-row inactive">
-  <p>
-      Bir sonraki soru: Hangi spor dalı?
-        <span><small>(430 kez oylandı.)</small></span>
-    </p>
-    <div class="col-md-12 padding-none">
-      <ul id="myTab" class="product-selection">
-          <div class="or-div"></div>
-          <li>
-            <a data-toggle="tab" href="#home">
-              <p>Futbol</p>
-                <%= image_tag("product3.png")%>
-            </a>
-          </li>
-          <li>
-            <a data-toggle="tab" href="#profile">
-              <p>Basketbol</p>
-                <%= image_tag("product4.png")%>
-            </a>
-          </li>
-        </ul>
-    </div>
-</div>
-<!--bottom row end-->
+  $(".second_answer_click").click(function() {
+    var id = this.id
+    $.ajax({
+      type: 'POST',
+      url: "/score_up",
+      data:{ans_id: id, type: "sans"}
+    });
+    return false;
+  });
+
+  $(".vote_click").click(function() {
+    var id = this.id
+    $.ajax({
+      type: 'POST',
+      url: "/vote_up",
+      data:{que_id: id}
+    });
+    return false;
+  });  
+});
+</script>
+

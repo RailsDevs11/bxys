@@ -92,10 +92,17 @@ header {
   }
 }
 
+.right-icon {
+  background: image-url("check_arrow.png") no-repeat 0 5px;
+  display: inline;
+  float: right;
+  padding-left: 25px;
+}
+
 .social-media {
   border: 1px solid #D7D7D7;
   border-radius: 0 6px 6px 0;
-  padding: 8px 0 9px 9px;
+  padding: 8px 0 3px 9px;
   position: absolute;
   right: -78px;
   top: -1px;
@@ -119,8 +126,9 @@ header {
     border-style: solid;
     border-width: 1px 1px 0;
     font-size: 20px;
-    padding: 15px 0;
     text-align: center;
+    height: 60px;
+    line-height: 60px;
     position: relative;
     margin: 0;
     color: #000;
@@ -141,7 +149,7 @@ header {
 }
 
 .social-media-second {
-  padding: 15px 0 15px 12px;
+  padding: 10px 0 15px 12px;
   right: -93px;
   top: 0;
   border: 1px solid #D7D7D7;
@@ -168,10 +176,9 @@ header {
     list-style: none;
     position: relative;
     width: 50%;
-    height: 240px;
     overflow: hidden;
     a img {
-      height: 100%;
+      height: 210px;
       width: 100%;
     }
     &:last-child a .choose-option {
@@ -242,6 +249,17 @@ header {
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'gs\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#gs");
 }
 
+/*.disable li.active a .choose-option {
+  background-position:0 0 !important;
+}
+.disable li.active a, .disable:hover li a {
+  color:#000;
+}
+.disable li.active p, .disable:hover li p {
+    background-color: #e3e3e3;
+  color:#000;
+}*/
+
 footer {
   background: #262626;
   width: 100%;
@@ -271,9 +289,56 @@ footer {
   pointer-events: none;
 }
 
+.selected {
+  margin-top: 0;
+  transition: all 0.9s ease-in-out;
+  -webkit-transition: all 2s ease-in-out;
+  p, strong {
+    font-size: 14px !important;
+    color: #000 !important;
+    font-weight: normal;
+    background-color: #F7F7F7;
+    border-radius: 0;
+  }
+  p {
+    height: 41px;
+    line-height: 41px;
+  }
+  .social-media {
+    top: 0;
+    right: -77px;
+  }
+  span {
+    color: #8B8B8B !important;
+    font-size: 14px !important;
+    margin-top: 12px;
+    padding-right: 20px;
+  }
+  .choose-option, .or-div {
+    display: none;
+  }
+  ul li {
+    background-color: rgba(0, 0, 0, 0);
+    text-align: left;
+    padding-left: 10px;
+    p, &.active p, &:hover p {
+      background-color: rgba(0, 0, 0, 0);
+      text-align: left;
+      padding-left: 10px;
+    }
+    border: #D7D7D7 solid 1px;
+    border-radius: 0px 0 0 6px;
+    &:last-child {
+      border-left: none;
+      border-radius: 0 0 6px 0;
+    }
+  }
+}
+
 @media (min-width: 320px) and (max-width: 700px) {
   .main-container {
     width: 84% !important;
+    padding: 0 17px;
   }
   .top-row {
     font-size: 12px;
@@ -309,8 +374,24 @@ footer {
     font-size: 14px;
     span {
       font-size: 14px;
-      display: block;
     }
+    height: 70px;
+    line-height: 27px;
+  }
+  .selected {
+    p {
+      height: 55px;
+      line-height: 12px;
+      padding-top: 8px;
+    }
+    span {
+      background-size: auto 50%;
+      padding-left: 15px;
+      padding-right: 4px;
+    }
+  }
+  .middle-row p span {
+    display: block;
   }
   .social-media-second {
     top: 0 !important;
@@ -322,6 +403,33 @@ footer {
       width: 25px !important;
       margin: 3px 0;
     }
+  }
+  .selected {
+    ul li {
+      display: block;
+      font-size: 11px !important;
+      height: 45px;
+      line-height: 12px;
+      padding-left: 2px;
+      padding-top: 6px;
+      p, &.active p, &:hover p {
+        display: block;
+        font-size: 11px !important;
+        height: 45px;
+        line-height: 12px;
+        padding-left: 2px;
+        padding-top: 6px;
+      }
+      span {
+        margin-top: 6px;
+      }
+    }
+    .social-media {
+      right: -25px;
+    }
+  }
+  .product-selection li a img {
+    height: 180px;
   }
 }
 

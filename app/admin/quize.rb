@@ -24,9 +24,9 @@ ActiveAdmin.register Quize do |q|
         row("ID") { task.id }
         row("QUESTION") { task.question }
         row("FIRST ANSWER") { task.first_answer }
-        row("First Image") { image_tag(task.first_aimage, width: '100px') }
+        row("First Image") { image_tag(task.first_answer_image, width: '100px') }
         row("SECOND ANSWER") { task.second_answer }
-        row("Second Image") { image_tag(task.second_aimage, width: '100px') }
+        row("Second Image") { image_tag(task.second_answer_image, width: '100px') }
         row("START VOTE") { task.start_vote }
         row("PUBLISH") { status_tag (task.is_publish ? "Done" : "Pending"), (task.is_publish ? :ok : :error) }
       end
@@ -39,8 +39,8 @@ ActiveAdmin.register Quize do |q|
       f.input :first_answer
       f.input :second_answer
       f.input :start_vote
-      f.input :first_ans_image, :as => :file, :hint => f.template.image_tag(f.object.first_aimage, width: '100px')
-      f.input :second_ans_image, :as => :file, :hint => f.template.image_tag(f.object.second_aimage, width: '100px')
+      f.input :first_ans_image, :as => :file, :hint => f.template.image_tag(f.object.first_answer_image, width: '100px')
+      f.input :second_ans_image, :as => :file, :hint => f.template.image_tag(f.object.second_answer_image, width: '100px')
       f.input :is_publish, :label => 'Publish'
     end                              
     f.actions                        
